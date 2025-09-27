@@ -2,38 +2,35 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use App\Helpers\ApiResponse;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Services\PasswordServiceInterface;
 use Illuminate\Validation\ValidationException;
+use App\Http\Requests\Auth\ForgotPasswordRequest;
 
 class PasswordResetLinkController extends Controller
 {
-    /**
-     * Handle an incoming password reset link request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): JsonResponse
-    {
-        $request->validate([
-            'email' => ['required', 'email'],
-        ]);
 
-        // We will send the password reset link to this user. Once we have attempted
-        // to send the link, we will examine the response then see the message we
-        // need to show to the user. Finally, we'll send out a proper response.
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+
+    private $passwordService;
+
+    public function __construct(PasswordServiceInterface $passwordService){
+        $this->passwordService = $passwordService;
+    }
+    
+        
+    
+    public function store(ForgotPasswordRequest $request): JsonResponse
+    {
+        $validatedData = $request->validated();
+        $status = $this->passwordService->sendEmailResetPassword( $validatedData ['email']);
 
         if ($status != Password::RESET_LINK_SENT) {
-            throw ValidationException::withMessages([
-                'email' => [__($status)],
-            ]);
+           return ApiResponse::sendResponse(422,__($status),[]);
         }
 
-        return response()->json(['status' => __($status)]);
+        return ApiResponse::sendResponse(200,__($status),[]);
     }
 }

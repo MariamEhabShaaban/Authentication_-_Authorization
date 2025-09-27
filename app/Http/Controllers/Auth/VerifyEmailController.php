@@ -2,31 +2,37 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+use App\Helpers\ApiResponse;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Verified;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Controller;
 
 class VerifyEmailController extends Controller
 {
-    /**
-     * Mark the authenticated user's email address as verified.
-     */
-    public function __invoke(EmailVerificationRequest $request): RedirectResponse
+    public function __invoke(Request $request, $id, $hash)
     {
-        if ($request->user()->hasVerifiedEmail()) {
-            return redirect()->intended(
-                config('app.frontend_url').RouteServiceProvider::HOME.'?verified=1'
-            );
+     
+        if (! $request->hasValidSignature()) {
+            return ApiResponse::sendResponse(403, 'Invalid or expired verification link', []);
         }
 
-        if ($request->user()->markEmailAsVerified()) {
-            event(new Verified($request->user()));
+        $user = User::findOrFail($id);
+
+       
+        if (! hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+            return ApiResponse::sendResponse(403, 'Invalid verification data', []);
         }
 
-        return redirect()->intended(
-            config('app.frontend_url').RouteServiceProvider::HOME.'?verified=1'
-        );
+     
+        if ($user->hasVerifiedEmail()) {
+            return ApiResponse::sendResponse(200, 'Email already verified', []);
+        }
+
+       
+        $user->markEmailAsVerified();
+        event(new Verified($user));
+
+        return ApiResponse::sendResponse(200, 'Email verified successfully', []);
     }
 }

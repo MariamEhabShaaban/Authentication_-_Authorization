@@ -3,12 +3,13 @@
 namespace App\Http\Requests\Auth;
 
 use Illuminate\Auth\Events\Lockout;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
+use App\Helpers\ApiResponse;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\ValidationException;
-
 class LoginRequest extends FormRequest
 {
     /**
@@ -30,6 +31,14 @@ class LoginRequest extends FormRequest
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
         ];
+    }
+
+
+       protected function failedValidation(Validator $validator){
+        if($this->is('api/*')){
+            $response = ApiResponse::sendResponse(422,'fail',$validator->errors());
+            throw new ValidationException($validator , $response);
+        }
     }
 
     /**

@@ -1,0 +1,1238 @@
+{
+	"info": {
+		"_postman_id": "583b0a79-e568-4e82-b60a-c3731eb79b07",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48217942"
+	},
+	"item": [
+		{
+			"name": "register_new_user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mariam26@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "26122003",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "26122003",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register_new_user_example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122003",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122003",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 01:36:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"registerd successfully\",\n    \"data\": {\n        \"token\": \"6|B5wsmWCCRyoMkHno2UJ05Mmy1mjr3nrafPMk3zfAd037e07d\",\n        \"name\": \"mariam\",\n        \"email\": \"mariam26@gmail.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam26@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "26122003",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "26122003",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login_example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122003",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122003",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 04:45:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Login Successfully\",\n    \"data\": {\n        \"token\": \"10|B8B2scUsPbEUGKFxEKLKditw3RmAhXdLeIqQkeWx36e8b45e\",\n        \"name\": \"mariam\",\n        \"email\": \"mariam26@gmail.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10|B8B2scUsPbEUGKFxEKLKditw3RmAhXdLeIqQkeWx36e8b45e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam26@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "26122003",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "26122003",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Logout_example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122003",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122003",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 04:46:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Logged out successfully\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Forgot_Password",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10|B8B2scUsPbEUGKFxEKLKditw3RmAhXdLeIqQkeWx36e8b45e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam26@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "26122003",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password_confirmation",
+							"value": "26122003",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/forgot-password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"forgot-password"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Forgot_Password_Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122003",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122003",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/forgot-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"forgot-password"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 27 Sep 2025 01:30:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"We have emailed your password reset link.\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Reset_Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "61fddf35444aa6c4cc1200979bf121162e6de90d01762ed0397e5eed53baabe7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam26@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "26122004",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "26122004",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "61fddf35444aa6c4cc1200979bf121162e6de90d01762ed0397e5eed53baabe7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/reset-password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"reset-password"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reset_Password_Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122004",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122004",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "61fddf35444aa6c4cc1200979bf121162e6de90d01762ed0397e5eed53baabe7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/reset-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 27 Sep 2025 01:40:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Your password has been reset.\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Verify_Email",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Verify_Email_Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122003",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122003",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/verify-email/13/bd625e4f0ab0a54db5bcb11e69e5ff5d8e0caafa?expires=1758945611&signature=630e41272a154bea3f05b3fb0602d26a6bb05514619b87648e03b83c1f2d91f8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"verify-email",
+								"13",
+								"bd625e4f0ab0a54db5bcb11e69e5ff5d8e0caafa"
+							],
+							"query": [
+								{
+									"key": "expires",
+									"value": "1758945611"
+								},
+								{
+									"key": "signature",
+									"value": "630e41272a154bea3f05b3fb0602d26a6bb05514619b87648e03b83c1f2d91f8"
+								},
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 27 Sep 2025 03:07:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "6"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "5"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Email verified successfully\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Send_Verify_Link",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "17|Lgpjwxl78VYRpoG2N3f3VwZEmBLK7npPCKmroFnL23058159",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mariam26@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "26122003",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "26122003",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/email/verification-notification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"email",
+						"verification-notification"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mariam",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mariam@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mariam26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "26122003",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "26122003",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/email/verification-notification",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"email",
+								"verification-notification"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mariam",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mariam@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 27 Sep 2025 03:20:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "6"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "5"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"verification-link-sent\",\n    \"data\": []\n}"
+				}
+			]
+		}
+	]
+}
